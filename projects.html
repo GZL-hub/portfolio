@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="portfoliocss.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="content">
+        <div id="content">
+            <!-- Canvas for any graphical content -->
+            <canvas id="canvas1"></canvas>
+            
+            <div class="projects-main-content">
+                <!-- Projects Section -->
+                <h1 class="projects-intro_h1">Projects</h1>
+                <div class="projects-container">
+                    <div class="project">
+                        <h2 class="project-title">E-Commerce Website</h2>
+                        <p class="project-description">
+                            E-Commerce Website made by Goo Zong Lin.</p>                        
+                        <a href="https://github.com/GZL-hub/e-commerce-website" class="project-link">View Project</a>
+                    </div>
+                    <div class="project">
+                        <h2 class="project-title">Pokemon Arena</h2>
+                        <p class="project-description">Group Assignment for Object-Oriented-Programming-Principles. This project involves creating a Pokemon battle simulator using object-oriented programming principles. The game allows players to choose their Pokemon and battle against each other.</p>
+                        <a href="https://github.com/GZL-hub/Pokemon-Arena" class="project-link">View Project</a>
+                    </div>
+                    <div class="project">
+                        <h2 class="project-title">Geoquiz</h2>
+                        <p class="project-description">GeoQuiz is an interactive Android app built using Kotlin and developed in Android Studio. Designed as an engaging and educational game, it challenges users to test and improve their geographical knowledge.</p>
+                        <a href="https://github.com/GZL-hub/GeoQuiz" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Bar -->
+            <nav>
+                <div class="buttons-container">
+                    <!-- Toggle Mode Button -->
+                    <button id="toggle-mode">
+                        <i class="fa-regular fa-square"></i>
+                        <span class="darkButton_text">Dark</span>
+                    </button>
+                    <!-- Light Mode Button -->
+                    <button id="light-mode">
+                        <i class="fa-regular fa-square"></i>
+                        <span class="lightButton_text">Light</span>
+                    </button>
+                </div>
+                <!-- Navigation Links -->
+                <ul class="navbar">
+                    <a id="home-link" href="index.html">Home</a>
+                    <a id="projects-link" href="projects.html">Projects</a>
+                    <a id="contact-link" href="contact.html">Contact</a>
+                </ul>
+            </nav>
+            <!-- Menu Toggle Button for Mobile View -->
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </button>
+            <!-- Popup Navigation Menu -->
+            <div id="popup-menu" class="popup-menu">
+                <ul class="popup-navbar">
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="main_script.js"></script>
+</body>
+</html>

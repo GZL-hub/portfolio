@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My index</title>
+        <!--CSS-->
+        <link rel="stylesheet" href="portfoliocss.css">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </head>
+    <body>
+        <div id="content">
+            <!-- Canvas for any graphical content -->
+            <canvas id="canvas1"></canvas>
+            <div class="main-content">
+                <!-- Introduction Section -->
+                <h1 class="intro_h1">Goo Zong Lin</h1>
+                <div class="intro_container">
+                    <p class="intro_p">Aspiring Full-Stack Software Developer | BSE Software Engineering</p>
+                </div>
+                <!-- About Me Section -->
+                <div class="about-me">
+                    <p class="about_me_p">
+                        I'm Goo Zong Lin, an aspiring full-stack software engineer currently studying at Sunway University, with an expected graduation in 2025. I have a strong foundation in both front-end and back-end development and am passionate about building applications that combine functionality with intuitive user experiences. My hands-on experience includes working with Android and web applications, developing mobile apps, and creating database-driven solutions. I aim to leverage my technical skills and creativity to solve real-world problems and drive innovation in the tech industry.
+                    </p>
+                </div>
+                <!-- Social Media Links -->
+                <div class="social-media">
+                    <a href="https://github.com/GZL-hub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/goo-zong-lin-429572270/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navigation Bar -->
+            <nav>
+                <div class="buttons-container">
+                    <!-- Toggle Mode Button -->
+                    <button id="toggle-mode">
+                        <i class="fa-regular fa-square"></i>
+                        <span class="darkButton_text">Dark</span>
+                    </button>
+                    <!-- Light Mode Button -->
+                    <button id="light-mode">
+                        <i class="fa-regular fa-square"></i>
+                        <span class="lightButton_text">Light</span>
+                    </button>                
+                </div>
+                <!-- Navigation Links -->
+                <ul class="navbar">
+                    <a id="home-link" href="index.html">Home</a>
+                    <a id="projects-link" href="projects.html">Projects</a>
+                    <a id="contact-link" href="contact.html">Contact</a>
+                </ul>
+            </nav>
+            <!-- Menu Toggle Button for Mobile View -->
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </button>
+            <!-- Popup Navigation Menu -->
+            <div id="popup-menu" class="popup-menu">
+                <ul class="popup-navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- Social Media Links for Mobile View -->
+                    <li class="popup-social-media">
+                        <a href="https://github.com/GZL-hub" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/goo-zong-lin-429572270/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- JavaScript -->
+        <script src="main_script.js"></script>
+    </body>
+</html>

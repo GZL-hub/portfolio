@@ -1,0 +1,546 @@
+/* Importing Fonts and Icons */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Canvas */
+#canvas1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(3px);
+}
+
+/* Link */
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
+a:hover {
+    color: red;
+}
+
+/* Body */
+body {
+    background-color: #f2f2f2;
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background: rgb(0, 0, 0);
+    color: #f2f2f2;
+}
+
+body.dark-mode a:link, body.dark-mode a:visited {
+    color: #f2f2f2;
+}
+
+body.dark-mode a:hover {
+    color: red;
+}
+
+/* Intro and About Me */
+.intro_h1 {
+    font-family: "Ysabeau Office", sans-serif;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-size: 50px;
+}
+
+.intro_container {
+    display: flex;
+    justify-content: left;
+}
+
+.intro_p, .about_me_p {
+    font-family: "Ysabeau Office", sans-serif;
+    font-size: 17px;
+    text-align: justify;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.about-me {
+    margin-top: 50px;
+}
+
+.dark-mode .intro_p, .dark-mode .about_me_p, .dark-mode .intro_h1, .dark-mode .navbar {
+    color: #f2f2f2;
+}
+
+.dark-mode .intro_p {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+body:not(.dark-mode) .intro_p {
+    border-bottom: 1px solid black;
+}
+
+/* Navbar */
+.navbar {
+    font-family: "Ysabeau Office", sans-serif;
+    font-style: normal;
+    margin-top: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 55px;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    gap: 10px;
+}
+
+.navbar a {
+    position: relative;
+    color: black;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: red;
+    transition: width 0.4s ease;
+    -webkit-transition: width 0.4s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: red !important;
+}
+
+.navbar a.active {
+    font-weight: bold;
+    color: red;
+}
+
+.navbar a.active::after {
+    width: 100%;
+    left: 0;
+    background-color: red;
+}
+
+.dark-mode .navbar a {
+    color: white;
+}
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    margin-right: 100px;
+}
+
+.social-media a {
+    color: black;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: red;
+}
+
+body.dark-mode .social-media a {
+    color: white;
+}
+
+body.dark-mode .social-media a:hover {
+    color: red;
+}
+
+/* Hide social media icons in main navigation bar for mobile view */
+@media (max-width: 768px) {
+    .social-media {
+        display: none;
+    }
+}
+
+/* Show social media icons in popup menu for mobile view */
+.popup-social-media {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .popup-social-media {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .popup-social-media a {
+        color: black;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+
+    .popup-social-media a:hover {
+        color: red;
+    }
+
+    body.dark-mode .popup-social-media a {
+        color: white;
+    }
+
+    body.dark-mode .popup-social-media a:hover {
+        color: red;
+    }
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 200px;
+    width: 40%;
+    text-align: justify;
+}
+
+/* Button */
+.buttons-container {
+    margin-right: 80px;
+    margin-bottom: 25px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    gap: 10px;
+}
+
+#toggle-mode, #light-mode {
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+
+#toggle-mode i, #light-mode i {
+    font-size: 18px;
+    transition: color 0.3s ease;
+    margin-right: 10px;
+}
+
+#toggle-mode:hover i, #light-mode:hover i {
+    color: red;
+}
+
+.dark-mode #toggle-mode:hover i, .dark-mode #light-mode:hover i {
+    color: red;
+}
+
+.dark-mode #toggle-mode:hover, .dark-mode #light-mode:hover {
+    color: red;
+}
+
+.dark-mode #toggle-mode, .dark-mode #light-mode {
+    color: white;
+}
+
+.darkButton_text, .lightButton_text {
+    font-family: "Ysabeau Office", sans-serif;
+    font-size: 17px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Contact Section */
+.contact_container {
+    font-family: "Ysabeau Office", sans-serif;
+    margin: 50px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.295);
+}
+
+body.dark-mode .contact_container {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.432);
+}
+
+.contact_p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.contact_p a {
+    color: #0073b1; /* LinkedIn blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact_p a:hover {
+    color: #005582; /* Darker LinkedIn blue */
+}
+
+/* Fade-out effect */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Fade-in effect */
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        margin: 0;
+        position: static;
+        top: auto;
+        right: auto;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .main-content {
+        margin: 0 auto;
+        width: 90%;
+        padding: 10px;
+        text-align: center; /* Center align text */
+    }
+
+    .intro_h1 {
+        font-size: 36px;
+        margin-top: 100px;
+    }
+
+    .intro_container {
+        justify-content: center; /* Center align container */
+    }
+
+    .intro_p, .about_me_p {
+        font-size: 14px;
+    }
+
+    .buttons-container {
+        margin: 0;
+        bottom: 20px;
+        right: 20px;
+        flex-direction: column;
+    }
+
+    #toggle-mode, #light-mode {
+        font-size: 14px;
+    }
+
+    #toggle-mode i, #light-mode i {
+        font-size: 16px;
+    }
+}
+/* Popup Menu for Mobile View */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    z-index: 1000;
+    color: black; /* Set the default icon color to dark */
+}
+
+.popup-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Light background with opacity */
+    backdrop-filter: blur(10px); /* Blur effect */
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.popup-menu.show {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-navbar {
+    list-style: none;
+    text-align: center;
+    font-family: "Ysabeau Office", sans-serif; /* Add your desired font family */
+    font-size: 24px; /* Adjust the font size */
+    color: black; /* Set the font color to dark */
+}
+
+.popup-navbar li {
+    margin: 20px 0;
+}
+
+.popup-navbar a {
+    color: black; /* Set the font color to dark */
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.popup-navbar a:hover {
+    color: #ff6347; /* Change to your desired hover color */
+}
+
+/* Dark Mode Styles */
+body.dark-mode .popup-menu {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+}
+
+body.dark-mode .popup-navbar {
+    color: white; /* Set the font color to light */
+}
+
+body.dark-mode .popup-navbar a {
+    color: white; /* Set the font color to light */
+}
+
+body.dark-mode .popup-navbar a:hover {
+    color: #ff6347; /* Change to your desired hover color */
+}
+
+body.dark-mode .menu-toggle {
+    color: white; /* Set the icon color to light */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Projects Page */
+.projects-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    font-family: "Consolas", monospace; /* Update font family */
+}
+
+.projects-intro_h1 {
+    font-family: "Consolas", monospace; /* Update font family */
+    padding-top: 50px;
+    margin-bottom: 20px;
+    font-weight: 200;
+    font-size: 50px;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "Consolas", monospace; /* Update font family */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.project {
+    background-color: white;
+    border: 1px solid #ddddddb7;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: "Consolas", monospace; /* Update font family */
+}
+
+/* Dark Mode Styles for Projects Page */
+body.dark-mode .projects-main-content {
+    color: #f2f2f2;
+}
+
+body.dark-mode .projects-container {
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .project {
+    background-color: #444;
+    border: 1px solid #555;
+}
+
+body.dark-mode .project-title,
+body.dark-mode .project-description,
+body.dark-mode .project-link {
+    color: #f2f2f2;
+}
+
+.project-link {
+    font-family: "Consolas", monospace; /* Ensure font family is Consolas */
+    font-size: 18px; /* Increase font size */
+    color: #007bff; /* Link color */
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add transition for animation */;
+}
+
+.project-link:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    color: #0056b3; /* Change color on hover */
+}
+
+/* Dark mode styles */
+body.dark-mode .project-link {
+    color: #66b2ff; /* Link color for dark mode */
+}
+
+body.dark-mode .project-link:hover {
+    color: #3399ff; /* Change color on hover for dark mode */
+}
+
+.project-image {
+    width: 100%; /* Adjust the width as needed */
+    max-width: 300px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
